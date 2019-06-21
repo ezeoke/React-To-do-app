@@ -14,7 +14,6 @@ render(){
   </ul>
   </div>
  )
-}
-}
+}}
 
 export default Todo;
