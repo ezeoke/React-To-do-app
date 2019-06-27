@@ -15,7 +15,11 @@ class Todo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.newTodo)
+    // console.log(this.state.newTodo)
+    this.setState(()=>{
+        return{ todoItems: this.state.todoItems.concat(this.state.newTodo),
+        newTodo: this.state.newTodo = ''}});
+       
   }
 
   render() {
@@ -24,9 +28,7 @@ class Todo extends Component {
       <div>
         <Header title='MY TODO TITLE' />
         <h1>Welcome to my todo app</h1>
-
         {this.state.todoItems.map((item) => { return <TodoItems individualItems={item} /> })}
-
         <form onSubmit={this.handleSubmit}>
           <label>Todo Items</label><br></br>
           <input type="text" name="todo-item"
@@ -40,4 +42,4 @@ class Todo extends Component {
   }
 }
 
-export default Todo;
+export default Todo; 
