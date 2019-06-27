@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Todo from './components/Todo';
 import * as serviceWorker from './serviceWorker';
+import LocalStorage from './components/LocalStorage';
 
 
-ReactDOM.render(<Todo/>, document.getElementById('root'));
+ReactDOM.render(<LocalStorage/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
