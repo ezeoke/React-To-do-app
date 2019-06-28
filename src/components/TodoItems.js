@@ -4,7 +4,7 @@ const TodoItems = (props) => {
  return (
   <div>
    {props.individualItems}
-   <h2>this goes too</h2>
+   {/* <h2>this goes too</h2> */}
   </div>
  )
 }
