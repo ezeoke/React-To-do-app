@@ -16,9 +16,9 @@ class Todo extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     // console.log(this.state.newTodo)
-    this.setState(() => {
+    this.setState((prevState) => {
       return {
-        todoItems: this.state.todoItems.concat(this.state.newTodo),
+        todoItems: prevState.todoItems.concat(this.state.newTodo),
         newTodo: this.state.newTodo = ''
       }
     });
@@ -26,7 +26,7 @@ class Todo extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.length !== this.state.todoItems.length) {
+    if (prevState.todoItems.length !== this.state.todoItems.length) {
  const jsonState = JSON.stringify(this.state.todoItems);
  localStorage.setItem('todoItems', jsonState)
     }
@@ -35,7 +35,11 @@ class Todo extends Component {
   componentDidMount(){
     if(localStorage.getItem('todoItems') !== null){
     const jsonState = JSON.parse(localStorage.getItem('todoItems'));
-     this.setState({todoItems: this.state.todoItems = jsonState})
+     this.setState(()=>{
+       return {
+         todoItems: jsonState
+       }
+     })
   }}
 
   render() {
