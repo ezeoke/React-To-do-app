@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+                                                                                                                                                                                              import React, { Component } from 'react';
 import Header from './Header';
 import TodoItems from './TodoItems';
 
@@ -22,8 +22,16 @@ class Todo extends Component {
         newTodo: this.state.newTodo = ''
       }
     });
-
   }
+
+  handleRemoveOneItem = (itemToBeRemoved) => {
+		console.log(this.handleRemoveOneItem)
+		this.setState(pvevState => ({
+			todoItems: prevState.todoItems.filter(
+				todoItem  => todoItem !== itemToBeRemoved
+			)
+			}))
+	}
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.todoItems.length !== this.state.todoItems.length) {
@@ -48,7 +56,8 @@ class Todo extends Component {
       <div>
   <Header title='MY TODO TITLE' />
   <h1>Welcome to my todo app</h1>
-        { this.state.todoItems.map((item) => { return <TodoItems individualItems={item} /> }) }
+        { this.state.todoItems.map((item) => { return <TodoItems individualItems={item} key = {item}
+						handleRemoveOneItem = {this.handleRemoveOneItem}/> }) }
 <form onSubmit={this.handleSubmit}>
   <label>Todo Items</label><br></br>
   <input type="text" name="todo-item"
