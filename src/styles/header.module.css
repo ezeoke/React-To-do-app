@@ -1,0 +1,33 @@
+.headerContainer {
+    background: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.headerContainer h2 {
+    color: white;
+    padding-left: 6px;
+}
+
+.headerContainer ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap
+}
+
+.headerContainer ul li {
+    color: white;
+    padding-right: 15px
+}
+
+.headerContainer ul li a {
+    list-style: none;
+    text-decoration: none
+}
+
+.headerContainer ul li a:hover {
+   color: red
+}
+

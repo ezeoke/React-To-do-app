@@ -4,9 +4,13 @@ const TodoItems = props => {
   return (
     <div>
       {props.individualItems}
-      <button onClick={(e)=>{
-		  props.handleRemoveOneItem(individualItems)
-	  }}>Remove</button>
+      <button
+        onClick={e => {
+          props.handleRemoveOneItem(props.individualItems);
+        }}
+      >
+        Remove
+      </button>
     </div>
   );
 };
