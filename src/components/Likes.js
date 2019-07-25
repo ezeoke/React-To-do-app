@@ -1,19 +1,11 @@
 import React from 'react';
 import Header from './Header';
 
-class Likes extends React.Component{
- state = {
-  likes: 0,
-   grace: true}
- 
- increaseLikes = () => {
- this.setState((prevState)=>{
-   return {
-    likes: prevState.likes + 1,
-    grace: prevState.grace = false
-   }
- })
-}
+class Likes extends React.Component {
+	state = {
+		likes: 0,
+		grace: true
+	};
 
 decreaseLikes = () => { 
   if (this.state.likes){
