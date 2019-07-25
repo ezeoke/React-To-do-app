@@ -1,5 +1,5 @@
 .headerContainer {
-  background: blue;
+    background: #222e50;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,6 +15,7 @@
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
+  padding: 20px 0;
 }
 
 .headerContainer ul li {
