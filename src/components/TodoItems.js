@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import todoItemsStyles from "../styles/todoItems.module.css";
 
 const TodoItems = props => {
   return (
-    <div>
+    <div className={todoItemsStyles.todoItems}>
       {props.individualItems}
       <button
+        className={todoItemsStyles.removeButton}
         onClick={e => {
           props.handleRemoveOneItem(props.individualItems);
         }}

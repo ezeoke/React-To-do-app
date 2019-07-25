@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import TodoItems from "./TodoItems";
+import todoStyles from "../styles/todo.module.css";
 
 class Todo extends Component {
   state = {
@@ -68,12 +69,14 @@ class Todo extends Component {
 
   render() {
     return (
-      <div>
+      <div className={todoStyles.container}>
         <Header title="MY TODO TITLE" />
-        <h1>Welcome to my todo app</h1>
+        <h1 className={todoStyles.title}>Welcome to my todo app</h1>
 
-        <form onSubmit={this.handleSubmit}>
-          <label>Todo Items</label>
+      <div className={todoStyles.wrapper}>
+      <div className={todoStyles.forms}>
+       <form onSubmit={this.handleSubmit}>
+          {/* <label>Todo Items</label> */}
           <br />
           <input
             type="text"
@@ -84,7 +87,10 @@ class Todo extends Component {
           <br />
           <button>submit</button>
         </form>
-        <button
+       </div>
+
+       <div className={todoStyles.cover}>
+       <button className={todoStyles.removeAllButton}
           style={{
             display: this.state.todoItems.length == 0 ? "none" : "block"
           }}
@@ -102,6 +108,9 @@ class Todo extends Component {
             />
           );
         })}
+       </div>
+      </div>
+        
       </div>
     );
   }
